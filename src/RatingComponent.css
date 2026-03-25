@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+:root {
+  --color-orange-500: hsl(25deg 97% 53%);
+  --color-white: hsl(0deg 100% 100%);
+  --color-grey-500: hsl(217deg 12% 63%);
+  --color-grey-850: hsl(212, 12%, 21%);
+  --color-grey-900: hsl(214, 20%, 16%);
+  --color-grey-950: hsl(216deg 12% 8%);
+  --color-blue: hsl(228deg 45% 44%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-grey-950);
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+}
+
+button,
+p,
+span,
+h1,
+h2,
+a {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  width: clamp(2.6rem, calc(2.389rem + 0.901vw), 3.2rem);
+  height: clamp(2.6rem, calc(2.389rem + 0.901vw), 3.2rem);
+  font-size: clamp(0.95rem, calc(0.915rem + 0.15vw), 1.05rem);
+  font-weight: 700;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-grey-850);
+  color: var(--color-grey-500);
+  transition: background-color 0.3s ease;
+}
+
+.btn.active {
+  background-color: var(--color-white);
+  color: var(--color-grey-950);
+}
+
+.btn:hover {
+  background-color: var(--color-orange-500);
+}
+
+.submit__btn {
+  width: 100%;
+  margin-block-start: clamp(1.45rem, calc(1.292rem + 0.676vw), 1.9rem);
+  padding-block: clamp(0.9rem, calc(0.927rem - 0.03vw), 0.92rem)
+    clamp(0.7rem, calc(0.808rem - 0.12vw), 0.78rem);
+  font-size: clamp(0.89rem, calc(0.87rem + 0.075vw), 0.94rem);
+  font-weight: 700;
+  letter-spacing: 0.105rem;
+  border-radius: 1.5rem;
+  border: none;
+  background-color: var(--color-orange-500);
+  color: var(--color-grey-950);
+  transition: background-color 0.3s ease;
+}
+
+.submit__btn:hover {
+  background-color: var(--color-white);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin-block-start: clamp(1.55rem, calc(1.427rem + 0.526vw), 1.9rem);
+  height: clamp(22.5rem, calc(21.232rem + 5.408vw), 26.1rem);
+  width: clamp(20.5rem, calc(18.599rem + 8.113vw), 25.9rem);
+  border-radius: clamp(1rem, calc(0.648rem + 1.502vw), 2rem);
+  background-color: var(--color-grey-900);
+}
+
+.rating__card {
+  padding-inline: clamp(1.55rem, calc(1.374rem + 0.751vw), 2.05rem)
+    clamp(1.55rem, calc(1.356rem + 0.826vw), 2.1rem);
+  padding-block-start: clamp(1.5rem, calc(1.324rem + 0.751vw), 2rem);
+}
+
+.star__symbol {
+  background-color: var(--color-grey-850);
+  border: none;
+  border-radius: 50%;
+  width: clamp(2.5rem, calc(2.324rem + 0.751vw), 3rem);
+  height: clamp(2.5rem, calc(2.324rem + 0.751vw), 3rem);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.img__star {
+  width: 1rem;
+  height: auto;
+}
+
+.rating__card-title {
+  padding-block: clamp(1.25rem, calc(0.898rem + 1.502vw), 2.25rem)
+    clamp(0.6rem, calc(0.803rem - 0.225vw), 0.75rem);
+  font-size: clamp(1.53rem, calc(1.45rem + 0.4vw), 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.029rem;
+  color: var(--color-white);
+}
+
+.rating__card-text {
+  font-size: clamp(0.91rem, calc(0.879rem + 0.136vw), 0.98rem);
+  font-weight: 700;
+  letter-spacing: -0.0349rem;
+  line-height: 1.4rem;
+  color: var(--color-grey-500);
+}
+
+.rating__card-button {
+  padding-block-start: 1.44rem;
+  padding-inline: clamp(1.55rem, calc(1.356rem + 0.826vw), 2.1rem)
+    clamp(1.45rem, calc(1.045rem + 1.728vw), 2.6rem);
+}
+
+.rating__btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.thank__you-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: clamp(1.6rem, calc(1.735rem - 0.15vw), 1.7rem)
+    clamp(1.55rem, calc(1.356rem + 0.826vw), 2.1rem);
+  padding-block-start: clamp(2.1rem, calc(1.853rem + 1.052vw), 2.8rem);
+  border-radius: clamp(1rem, calc(0.648rem + 1.502vw), 2rem);
+}
+
+.thank__you-img {
+  width: clamp(9rem, calc(8.613rem + 1.653vw), 10.1rem);
+}
+
+.thank__you-selection {
+  margin-block-start: clamp(1.4rem, calc(1.189rem + 0.901vw), 2rem);
+  padding-block: clamp(0.45rem, calc(0.653rem - 0.225vw), 0.6rem)
+    clamp(0.3rem, calc(0.503rem - 0.225vw), 0.45rem);
+  padding-inline: clamp(0.8rem, calc(0.659rem + 0.601vw), 1.2rem);
+  font-size: clamp(0.84rem, calc(0.793rem + 0.216vw), 0.99rem);
+  font-weight: 700;
+  letter-spacing: -0.005rem;
+  border-radius: 0.9rem;
+  background-color: var(--color-grey-850);
+  color: var(--color-orange-500);
+}
+
+.thank__you-thanks {
+  padding-block-start: clamp(1.9rem, calc(1.724rem + 0.751vw), 2.4rem);
+  font-size: clamp(1.45rem, calc(1.344rem + 0.451vw), 1.75rem);
+  letter-spacing: 0.017rem;
+  color: var(--color-white);
+}
+
+.thank__you-thanks:hover {
+  color: var(--color-grey-500);
+}
+
+.thank__you-text {
+  padding-block: clamp(0.5rem, calc(0.838rem - 0.376vw), 0.75rem)
+    clamp(2.2rem, calc(1.989rem + 0.901vw), 2.8rem);
+  padding-inline: clamp(0rem, calc(-0.176rem + 0.751vw), 0.5rem);
+  font-size: clamp(0.84rem, calc(0.82rem + 0.089vw), 0.9rem);
+  font-weight: 700;
+  line-height: 1.39rem;
+  text-align: center;
+  color: var(--color-grey-500);
+}
+
+.hidden {
+  display: none;
+}
+
+/* FOOTER DEFINITION */
+.attribution {
+  padding-block-start: 0.5rem;
+  font-size: 0.6875rem;
+  text-align: center;
+  color: var(--color-grey-500);
+}
+
+.attribution-link {
+  color: var(--color-blue);
+}
+
+/* Desktop version */
+@media (width >= 64rem) {
+  .rating__card-title {
+    letter-spacing: -0.0125rem;
+  }
+
+  .rating__card-text {
+    letter-spacing: -0.041rem;
+    line-height: 1.5rem;
+  }
+
+  .submit__btn {
+    letter-spacing: 0.13rem;
+  }
+
+  .thank__you-selection {
+    margin-inline-start: 0.5rem;
+    letter-spacing: -0.04rem;
+  }
+
+  .thank__you-thanks {
+    letter-spacing: 0.002rem;
+    padding-inline-start: 0.5rem;
+  }
+
+  .thank__you-text {
+    line-height: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
+  }
+}
