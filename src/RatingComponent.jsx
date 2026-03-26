@@ -8,7 +8,7 @@ const RatingComponent = () =>{
   const [isRating, setIsRating] = useState(null); // krabicka na vybrane cislo, ktore sa bude posielat do "thank zou card", na zaciatku je prazdne
   const [isSubmit, setIsSubmit] = useState(false); // krabicka na to, ci sme uz skoncili s vyberom, alebo este nie, na zaciatku je "nie" - false
 
-  const number = [1, 2, 3, 4, 5] // mame kopku cisiel, z ktorych budeme vyberat, tak si ich ulozime na jedno miesto, aby sme ich potom mohli 
+  const ratings = [1, 2, 3, 4, 5] // mame kopku cisiel, z ktorych budeme vyberat, tak si ich ulozime na jedno miesto, aby sme ich potom mohli 
                                   // jednoducho vytahovat, co budeme robit v casti "rating__btn"       
 
   useEffect (() => {
@@ -17,7 +17,7 @@ const RatingComponent = () =>{
 
 
 return (
-  <main className = "main__container">
+  <div className = "main__container">
     <div className="rating-container">
 
       { !isSubmit ? (
@@ -38,13 +38,13 @@ return (
         <div className="rating__card-button">
           <div className="rating__btn">
 
-            {number.map((number) => ( // prejdeme vsetky cisla v poli "ratings" a pre kazde cislo vytvorime tlacidlo, ktore bude mat text rovnaky ako to cislo, a ked klikneme na tlacidlo, tak sa nam do krabicky "selectedRating" ulozi to cislo, ktore sme klikli
+            {ratings.map((num) => ( // prejdeme vsetky cisla v poli "ratings" a pre kazde cislo vytvorime tlacidlo, ktore bude mat text rovnaky ako to cislo, a ked klikneme na tlacidlo, tak sa nam do krabicky "selectedRating" ulozi to cislo, ktore sme klikli
             
               <button 
-                key={number} // react potrebuje vediet, ktore cislo je ktore, aby vedel, ktore ma prekreslit, ked nan klikneme, akasi menovka pre cislo, aby ju vedel identifikovat
+                key={num} // react potrebuje vediet, ktore cislo je ktore, aby vedel, ktore ma prekreslit, ked nan klikneme, akasi menovka pre cislo, aby ju vedel identifikovat
                 type="button" 
-                className={`btn ${isRating === number ? 'active' : ''}`} // ak je cislo, ktore sme klikli rovnake ako cislo, ktore je v krabicke "selectedRating", tak sa tlacidlo zafarbí (dostane class "active"), inak bude bez farby. React sa opýta každého tlačidla: „Rovnáš sa ty číslu 3?“ To, ktoré povie „Áno“, dostane triedu active
-                onClick={() => setIsRating(number)}>{number}</button>
+                className={`btn ${isRating === num ? 'active' : ''}`} // ak je cislo, ktore sme klikli rovnake ako cislo, ktore je v krabicke "selectedRating", tak sa tlacidlo zafarbí (dostane class "active"), inak bude bez farby. React sa opýta každého tlačidla: „Rovnáš sa ty číslu 3?“ To, ktoré povie „Áno“, dostane triedu active
+                onClick={() => setIsRating(num)}>{num}</button>
               )
             )}
           </div>
@@ -92,7 +92,7 @@ return (
           Adriana Weidlichova</a>
         .
       </footer>  
-  </main>
+  </div>
 );
 };
 
